@@ -72,13 +72,14 @@ void searchList::display() {
     searchListEl *current = NULL;;
     current = head; //to transverse;
 
-    std::cout << std::endl << "infoS MATCHING" << std::endl;
+    std::cout << std::endl << "InfoS MATCHING" << std::endl;
+    std::cout << "======================================= \n";
     while(current != NULL){
-        std::cout << current->addrBookElem->first_name << " " <<  current->addrBookElem->last_name << std::setw(22)
-            << current->addrBookElem->spy_agency << std::setw(22) << current->addrBookElem->city << std::setw(22)
-            <<  current->addrBookElem->state << std::setw(22) << current->addrBookElem->city << std::setw(22)
-            <<  current->addrBookElem->born_year << std::setw(22) << "death age=" << current->addrBookElem->death_age << std::setw(25)
-            <<  current->addrBookElem->notes << std::endl;
+        std::cout << current->addrBookElem->first_name << " " <<  current->addrBookElem->last_name << '\n';
+        std::cout << "Spy Agency: " << current->addrBookElem->spy_agency << '\n';
+        std::cout << current->addrBookElem->city << std::setw(22) <<  current->addrBookElem->state << '\n';
+        std::cout << "Born year: " << current->addrBookElem->born_year << std::setw(22) << "Death age: " << current->addrBookElem->death_age << '\n';
+        std::cout << "Notes: " <<  current->addrBookElem->notes << '\n' << std::endl;
         current = current->link; //update curr
     }
 }

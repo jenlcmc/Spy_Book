@@ -41,13 +41,13 @@ spyBook::~spyBook() {
      * Algo - display the element by access it mem
     */
 void spyBook::displayRecord(info *r) {
-    cout  << "Name: " << setw(5) << r->first_name << " " << r->last_name << endl;
-    cout <<  "Spy Agency/Occupation: " << setw(10) << r->spy_agency << setw(10);
-    cout <<  "City: " << r->city << setw(10);
-    cout <<  "State: " << setw(10) << r->state << setw(10);
-    cout <<  "Born year: " << setw(10) << r->born_year << endl;
-    cout <<  "Death Age: " << setw(10) << r->death_age << endl;;
-    cout <<  "Notes: " << setw(10) << r->notes << endl;
+    cout  << "Name: " << r->first_name << " " << r->last_name << endl;
+    cout <<  "Spy Agency/Occupation: " << r->spy_agency << endl;
+    cout <<  "City: " << r->city;
+    cout <<  "State: " << r->state << endl;
+    cout <<  "Born year: " << r->born_year << endl;
+    cout <<  "Death Age: " << r->death_age << endl;;
+    cout <<  "Notes: "  << r->notes << endl;
     cout << endl;
 }
 
@@ -111,7 +111,7 @@ void spyBook::displayTree(info*current, int indent) {
         for(int i = 0 ; i < indent; i ++){
             cout << '\t';
         }
-        cout << "id=" << current->id << '\t' << "name=" << current->first_name << " " << current->last_name << endl;
+        cout << "id= " << current->id << '\t' << "name= " << current->first_name << " " << current->last_name << endl;
 
         if(current->child != NULL){
             indent = indent + 1;
