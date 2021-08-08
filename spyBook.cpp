@@ -308,7 +308,7 @@ void spyBook::search() {
     makeMenu.add("First name", '1');
     makeMenu.add("Last name", '2');
     makeMenu.add("City ", '3');
-    makeMenu.add("State", '4');
+    makeMenu.add("State/ Country", '4');
     makeMenu.add("Back to previous menu", 'q');
 
     char Userchoice; 
