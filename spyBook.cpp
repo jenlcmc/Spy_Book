@@ -42,7 +42,7 @@ spyBook::~spyBook() {
 void spyBook::displayRecord(info *r) {
     cout  << "Name: " << r->first_name << " " << r->last_name << endl;
     cout <<  "Spy Agency/Occupation: " << r->spy_agency << endl;
-    cout <<  "City: " << r->city;
+    cout <<  "City: " << r->city << endl;
     cout <<  "State: " << r->state << endl;
     cout <<  "Born year: " << r->born_year << endl;
     cout <<  "Death Age: " << r->death_age << endl;;
@@ -404,8 +404,9 @@ void spyBook::search() {
 
 void spyBook::add(){
     cout << "To add new information of the spy, please follow description" << endl;
-    cout << "The new spy information will be add at the end of the file start with line 43" << endl;
+    cout << "The new spy information will be add at the end of the file" << endl;
     cout << "Press Enter after each prompt to save the data" << endl;
+    cout << "After adding new information, please close the program to update new version of database\n";
 
     int parent = 0;
     int child = 0;
@@ -459,7 +460,6 @@ void spyBook::add(){
 
         ++parent;
         if(tolower(choice) == 'q'){
-            datafile.close();
             break;
         }
     }
