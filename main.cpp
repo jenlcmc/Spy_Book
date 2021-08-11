@@ -26,6 +26,7 @@ int main() {
     makeMenu.add("Display all", 'd');
     makeMenu.add("Display tree", 't');
     makeMenu.add("Search", 'j');
+    makeMenu.add("Add", 'a');
     makeMenu.add("Quit", 'q');
     
     // default action is to display 3 records
@@ -62,6 +63,10 @@ int main() {
     
         case 'j':
             myBook->search();
+            break;
+
+        case 'a':
+            myBook->add();
             break;
     
         case 'q':

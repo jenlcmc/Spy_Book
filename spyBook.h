@@ -19,4 +19,5 @@ class spyBook{
     void search();
     void operator++();
     void operator--();
+    void add();
 };

@@ -5,7 +5,6 @@
 #include "menu.h"
 #include <fstream>
 #include <vector>
-//test
 #include <sstream>
 
 using namespace std;
@@ -401,4 +400,67 @@ void spyBook::search() {
         break;
     }
     
+}
+
+void spyBook::add(){
+    cout << "To add new information of the spy, please follow description" << endl;
+    cout << "The new spy information will be add at the end of the file start with line 43" << endl;
+    cout << "Press Enter after each prompt to save the data" << endl;
+
+    int parent = 0;
+    int child = 0;
+    string first;
+    string last;
+    string agency;
+    string city;
+    string state_country;
+    string born_year;
+    string death_age;
+    string notes;
+    string line;
+    char choice;
+
+    ifstream file("records.csv");
+
+    while(!file.eof()){
+        getline(file, line);
+        ++parent;
+    }
+    parent = parent + 1;
+
+    while(!cin.fail()){
+        cout << "Enter first name: ";
+        cin >> first;
+        cout << "Enter last name: ";
+        cin >> last;
+        cout << "Enter agency, you can either enter full name or abbreviation: ";
+        cin >> agency;
+        cout << "Enter city: ";
+        cin >> city;
+        cout << "Enter state_country, you can either enter full name or abbreviation: ";
+        cin >> state_country;
+        cout << "Enter born_year: ";
+        cin >> born_year;
+        cout << "Enter death_age: ";
+        cin >> death_age;
+        cout << "Enter notes. Add anything you want about the spy: ";
+        cin >> notes;
+        cout << "To stop, enter q. Otherwise, enter other key" << endl;
+        cin >> choice;
+
+
+        string full = to_string(parent) + "," + to_string(child) + "," + first + "," + last + "," + agency
+                + "," + city + "," + state_country + "," + born_year + "," + death_age + "," + notes;
+
+        ofstream datafile;
+
+        datafile.open("records.csv", std::ios_base::app);
+        datafile << '\n' << full;
+
+        ++parent;
+        if(tolower(choice) == 'q'){
+            datafile.close();
+            break;
+        }
+    }
 }
